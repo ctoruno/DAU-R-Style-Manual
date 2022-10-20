@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>WJP - R Coding Handbook - 1&nbsp; Workflow</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workflow</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">WJP - R Coding Handbook</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workflow.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workflow</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sharepoint" id="toc-sharepoint" class="nav-link active" data-scroll-target="#sharepoint"> <span class="header-section-number">1.1</span> SharePoint</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git"> <span class="header-section-number">1.2</span> Git</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"> <span class="header-section-number">1.3</span> Projects</a></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"> <span class="header-section-number">1.4</span> Data Management</a>
+  <ul class="collapse">
+  <li><a href="#data-organization" id="toc-data-organization" class="nav-link" data-scroll-target="#data-organization"> <span class="header-section-number">1.4.1</span> Data Organization</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Workflow</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>In this chapter, we will cover the basic guidelines and issues related to the DAU workflow when programming with R and R Studio. Therefore, in order to assimilate the content in this chapter (and the entire handbook) we will require you to have the following:</p>
+<ul>
+<li><p>An intermediate knowledge of R language.</p></li>
+<li><p>R Studio is installed in your computer, however, you are free to use any other IDE of your choice.</p></li>
+<li><p>A basic knowledge of <a href="https://git-scm.com/">Git</a>.</p></li>
+<li><p>A <a href="https://github.com/">GitHub</a> account.</p></li>
+<li><p>Access to the DAU’s SharePoint</p></li>
+<li><p>Although is not required, we strongly advise you to install <a href="https://desktop.github.com/">GitHub Desktop</a>.</p></li>
+</ul>
+<p>If you are new to R, I would recommend you to check the <a href="https://jjallaire.github.io/hopr/">Hands-On Programming with R</a> book written by Garrett Grolemund. If you are already comfortable with the R programming language but you need an introduction on how to analyze data using it, I would suggest you to read the <a href="https://r4ds.had.co.nz/">R for Data Science</a> book edited by the R4DS team.</p>
+<section id="sharepoint" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sharepoint"><span class="header-section-number">1.1</span> SharePoint</h2>
+<p>All files used by the DAU are stored in the Data Analytics folder within the organization’s SharePoint. And, as a rule, you are required to work and modify these files directly from this online directory. In order to achieve this, you will need to <a href="https://www.microsoft.com/en-us/microsoft-365/onedrive/download">download the OneDrive app</a> in your computer and sign in using your WJP account. If you are already using One Drive with your personal account, you can add an additional work account which will function parallel to your personal account in your computer. For more information, see the following <a href="https://support.microsoft.com/en-us/office/how-to-add-an-account-in-onedrive-31b59063-5a94-4847-b846-c13b9e7635e2">website</a>.</p>
+<p>Given that the DAU SharePoint is a directory created and administered by the organization, you will have to sync this directory to your own OneDrive WJP Account. In order to do this, go to the Data Analytics directory using OneDrive Online and, once you are there, you will see the <strong><em>Add Shortcut to My Files</em></strong> option in the main panel headers. Follow the instructions and sync it to your WJP folder in your computer.</p>
+<p>By syncing your work with the SharePoint, the whole team is going to be able to see and review changes as they go. However, if more than one person is working on the same file, it is likely that this working flow will produce several mistakes. Therefore, we need a version control tool that will allow us to modify and collaborate in team projects without these kind of issues. Given that most of our work is focused in coding, we use Git and the GitHub platform for this.</p>
+</section>
+<section id="git" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="git"><span class="header-section-number">1.2</span> Git</h2>
+<p><a href="https://git-scm.com/">Git</a> is a free and open source software that allows users to set up a version control system designed to handle projects. Given the nature of its features, it is normally used for collaboratively developing code and data integrity. <a href="https://github.com/">GitHub</a> is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code. For a gentle introduction to Git and GitHub, see the following <a href="https://kinsta.com/knowledgebase/what-is-github/">post</a> published by Kinsta. For a more in depth introduction, please refer to the <a href="https://docs.github.com/en">GitHub documentation</a>.</p>
+<p>Using the Git features allow us to simultaneously work on the same project and even in the same code without worrying about interfering with other members of the team. As a rule, every project carried by the DAU has a code administrator who is in charge of setting up the GitHub repository and add other members of the team as project collaborators. Additionally, the code administrator is in charge of setting the <em>main branch</em> and the initial structure of the code (see the <span class="citation" data-cites="data-management">(<a href="#ref-data-management" role="doc-biblioref"><strong>data-management?</strong></a>)</span> section on this chapter). It is required that the GitHub repository have its <em>main branch</em> in its respective SharePoint folder.</p>
+<p>We use convergence development<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to collaboratively code in the same project. For this, it is highly recommended that each team member works on a separate <em>branch</em> and, once the data routine is done, the auxiliary branches can be merged into the main branch of the repository. Collaborators that are not the code administrator have the option to clone the GitHub repository in their computer in a local directory that it is not sync to the SharePoint and work in their respective branch from a local copy outside the SharePoint. In other words, it is only the functional final version contained inside the <em>main branch</em> the one that it is going to be sync in SharePoint.</p>
+<p><strong>Important:</strong> GitHub is used to keep track of the code we use in each project. Under no circumstance, we will include the data sources in the online repositories.</p>
+</section>
+<section id="projects" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="projects"><span class="header-section-number">1.3</span> Projects</h2>
+<p>When you load a data set or source an R script, you will have to set up the working directory where these files are located in your computer. However, the path to this working directory is quite different for all the members of the team. R Studio allow us to enclose all of our analysis, code and auxiliary files into a project.</p>
+<p>A project is a feature that allow us to work with the analysis we are carrying without having to worry about where does these files are stored or who is working on them. Say goodbye to <code>setwd("...")</code>. Besides managing relatives paths, R projects allow users to keep a history of actions performed and even keep the objects in your environment. Because of this, projects are the cornerstone of our work when performing analysis with R.</p>
+<p>As a rule, every project has a file named <code>project-name.Rproj</code> in its root directory and open it should be the first action when working on a project. For more information on working with R projects, refer to the <a href="https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects">Workflow section</a> from the R for Data Science book.</p>
+</section>
+<section id="data-management" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="data-management"><span class="header-section-number">1.4</span> Data Management</h2>
+<p>The University of California San Diego (UC San Diego) has a <a href="https://compass.ucsd.edu/data-management">Data Management Best Practices</a> that reviews common guidelines for managing research data. In this handbook, I will focus on two topics mentioned by those guidelines: Data Organization and Data Documentation.</p>
+<section id="data-organization" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="data-organization"><span class="header-section-number">1.4.1</span> Data Organization</h3>
+<p>The data organization involves three important elements: filing system, naming conventions and data granularity.</p>
+<p>A filing system is basically the organization structure (directories, folders, sub-folders, etc) in which files are stored. There are no standard rules about how this should be done. However, the chosen filing system needs to make sense not only to the person currently working on a given project but to anyone going through these files in the future. As a rule, each project would have the following sub-folders:</p>
+<ul>
+<li><p>Code: Depending on the complexity of the project, you could choose to create separate directories within the Code folder for Stata, R or Python files.</p></li>
+<li><p>Data: Depending on the complexity and nature of the project, you could choose to create separate directories within the Data folder for RAW, INTERMEDIATE or CLEAN data sets.</p></li>
+<li><p>Outcomes: The outcomes of the project might have several different formats. For example, images could be in PNG and/or SVG format, Reports might be created in PDF, some tables might be exported as TEX files, etc. The outcomes folder should have a separate directory for each one of these formats.</p></li>
+</ul>
+<p>In some cases, the creation of a PDF report is key, for example, the Regional Country Reports. For these projects, we strongly advise to create a separate directory to store the code files used for the report. At the moment of writing this handbook, these reports are created using <a href="https://rmarkdown.rstudio.com/">R Markdown</a>, but a migration to <a href="https://quarto.org/">Quarto</a> is feasible in the future.</p>
+<ul>
+<li>Markdown/Quarto</li>
+</ul>
+<p>In relation to the naming conventions, these are a set of rules designed to complement the filing system and help collaborators in understanding the data organization. Each project have the flexibility to use a specific set of naming rules to use in the filing system. However, there are a few general rules to note:</p>
+<ul>
+<li><p>Use descriptive file names that are meaningful to you and your colleagues while also keeping them short.</p></li>
+<li><p>Avoid using spaces and make use of hyphens, snake_case, and/or camelCase.</p></li>
+<li><p>Avoid special characters such as $, #, ^, &amp; in the file names.</p></li>
+<li><p>Be consistent not only along the project but also across different projects. If all different data files and routines are named in the same way, it’s easier for you to use those tools across projects and re-factor routines.</p></li>
+</ul>
+
+
+</section>
+</section>
+<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1" role="doc-endnote"><p>For more information about convergence development and branches, we advise you to refer to this <a href="https://www.pluralsight.com/blog/software-development/the-definitive-guide-to-forks-and-branches-in-git">article</a> from Pluralsight.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

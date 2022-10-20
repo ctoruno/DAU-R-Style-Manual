@@ -1,0 +1,61 @@
+# Coding
+
+In this chapter, we will cover some basic guidelines and styling rules related to how the coding is done at the DAU-WJP. When programming data analysis routines, it is very hard to vanquish the personal style the every person has. Therefore, this chapter is focused on giving general guidelines that will allow to standardize their codes for an easy collaboration among all team members.
+
+Remember, when writing a code, you are just the author not the audience. Therefore, think on how would other people understand what you are writing without the ideas and knowledge you have at the moment of creating your code. Writing comments, using titles as step-by-step guides, documenting the issues, all of these actions will greatly help other team members to understand what you have done and why you have done it. Also, this will also help you in the future to understand what you did in the past and reduce the level of dependency of a given project to the referring people.
+
+## Script Headline and Outline
+
+The headline is very important because it gives the general information about the script, its purposes, the authors, the version and last modification date, among others. Within the DAU, we have the following template for this headline:
+
+``` R
+## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##
+## Script:            PROJECT NAME - Script Purpose
+##
+## Author:            Author 1 Name   (email)
+##                    Author 2 Name   (email)
+##
+## Creation date:     Month Day, Year
+##
+## This version:      Month Day, Year
+##
+## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+```
+
+As you can see, the template highlights the most important information that we need to know when opening a script, even when we are new to it.
+
+## Outline
+
+``` R
+## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##
+#                0.  SETTINGS                                                                            ----
+##
+## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# Step 1
+
+# Step 2
+
+## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##
+#                1.  TITLE                                                                               ----
+##
+## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+## 1.1 SUBTITLE  ============================================================================================
+
+# Step 1
+
+# Step 2
+
+## 1.2 SUBTITLE  ============================================================================================
+
+# Step 1
+
+# Step 2
+```
+
+![](www/Header.png){fig-align="center"}

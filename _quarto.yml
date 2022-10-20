@@ -2,20 +2,20 @@ project:
   type: book
 
 book:
-  title: "DAU-R-Style-Manual"
-  author: "Jane Doe"
-  date: "9/27/2022"
+  title: "WJP - R Coding Handbook"
+  author: "Carlos A. Toruño P."
+  date: "October, 2022"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - workflow.qmd
+    - coding.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
+    link-external-newwindow: true
   pdf:
     documentclass: scrreprt
 
