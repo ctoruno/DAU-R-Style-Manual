@@ -4,7 +4,7 @@ project:
 book:
   title: "WJP - R Coding Handbook"
   author: "Carlos A. Toruño P."
-  date: "October, 2022"
+  date: "November, 2022"
   chapters:
     - index.qmd
     - workflow.qmd

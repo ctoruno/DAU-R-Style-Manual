@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.1.189">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -90,7 +95,7 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -108,16 +113,17 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sharepoint" id="toc-sharepoint" class="nav-link active" data-scroll-target="#sharepoint"> <span class="header-section-number">1.1</span> SharePoint</a></li>
-  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git"> <span class="header-section-number">1.2</span> Git</a></li>
-  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"> <span class="header-section-number">1.3</span> Projects</a></li>
-  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"> <span class="header-section-number">1.4</span> Data Management</a>
+  <li><a href="#sharepoint" id="toc-sharepoint" class="nav-link active" data-scroll-target="#sharepoint"><span class="toc-section-number">1.1</span>  SharePoint</a></li>
+  <li><a href="#git" id="toc-git" class="nav-link" data-scroll-target="#git"><span class="toc-section-number">1.2</span>  Git</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects"><span class="toc-section-number">1.3</span>  Projects</a></li>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="toc-section-number">1.4</span>  Data Management</a>
   <ul class="collapse">
-  <li><a href="#data-organization" id="toc-data-organization" class="nav-link" data-scroll-target="#data-organization"> <span class="header-section-number">1.4.1</span> Data Organization</a></li>
+  <li><a href="#file-organization" id="toc-file-organization" class="nav-link" data-scroll-target="#file-organization"><span class="toc-section-number">1.4.1</span>  File Organization</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation"><span class="toc-section-number">1.4.2</span>  Documentation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -141,26 +147,32 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>In this chapter, we will cover the basic guidelines and issues related to the DAU workflow when programming with R and R Studio. Therefore, in order to assimilate the content in this chapter (and the entire handbook) we will require you to have the following:</p>
-<ul>
-<li><p>An intermediate knowledge of R language.</p></li>
-<li><p>R Studio is installed in your computer, however, you are free to use any other IDE of your choice.</p></li>
-<li><p>A basic knowledge of <a href="https://git-scm.com/">Git</a>.</p></li>
-<li><p>A <a href="https://github.com/">GitHub</a> account.</p></li>
-<li><p>Access to the DAU’s SharePoint</p></li>
-<li><p>Although is not required, we strongly advise you to install <a href="https://desktop.github.com/">GitHub Desktop</a>.</p></li>
-</ul>
-<p>If you are new to R, I would recommend you to check the <a href="https://jjallaire.github.io/hopr/">Hands-On Programming with R</a> book written by Garrett Grolemund. If you are already comfortable with the R programming language but you need an introduction on how to analyze data using it, I would suggest you to read the <a href="https://r4ds.had.co.nz/">R for Data Science</a> book edited by the R4DS team.</p>
+<p>In this chapter, we will cover the basic guidelines and issues related to the prefered workflow when programming with R programming language. This chapter will cover four different aspects: a) <em>Cloud Storage</em>, b) <em>Version Control System</em>, c) <em>R Studio Projects</em>, and d) <em>File Management practices</em>.</p>
 <section id="sharepoint" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="sharepoint"><span class="header-section-number">1.1</span> SharePoint</h2>
-<p>All files used by the DAU are stored in the Data Analytics folder within the organization’s SharePoint. And, as a rule, you are required to work and modify these files directly from this online directory. In order to achieve this, you will need to <a href="https://www.microsoft.com/en-us/microsoft-365/onedrive/download">download the OneDrive app</a> in your computer and sign in using your WJP account. If you are already using One Drive with your personal account, you can add an additional work account which will function parallel to your personal account in your computer. For more information, see the following <a href="https://support.microsoft.com/en-us/office/how-to-add-an-account-in-onedrive-31b59063-5a94-4847-b846-c13b9e7635e2">website</a>.</p>
-<p>Given that the DAU SharePoint is a directory created and administered by the organization, you will have to sync this directory to your own OneDrive WJP Account. In order to do this, go to the Data Analytics directory using OneDrive Online and, once you are there, you will see the <strong><em>Add Shortcut to My Files</em></strong> option in the main panel headers. Follow the instructions and sync it to your WJP folder in your computer.</p>
-<p>By syncing your work with the SharePoint, the whole team is going to be able to see and review changes as they go. However, if more than one person is working on the same file, it is likely that this working flow will produce several mistakes. Therefore, we need a version control tool that will allow us to modify and collaborate in team projects without these kind of issues. Given that most of our work is focused in coding, we use Git and the GitHub platform for this.</p>
+<p>All files used by the DAU are stored in the Data Analytics folder within the organization’s SharePoint. This is done in order to provide an easy access to all members of the team. As a rule, you are required to work and modify these files directly from this online directory. To achieve this, you will need to <a href="https://www.microsoft.com/en-us/microsoft-365/onedrive/download">download the OneDrive app</a> in your computer and sign in using your WJP account. If you are already using One Drive with your personal account, you can add an additional professional account which will function parallel to your personal account in your computer. For more information, see the following <a href="https://support.microsoft.com/en-us/office/how-to-add-an-account-in-onedrive-31b59063-5a94-4847-b846-c13b9e7635e2">website</a>.</p>
+<p>Given that the DAU SharePoint is a directory created and administered by the organization, you will have to sync this directory to your own OneDrive WJP Account. In order to achieve this, follow these steps:</p>
+<ol type="1">
+<li>Login into your WJP Outlook account in any web browser.</li>
+<li>Once into your account, access <strong><em>OneDrive</em></strong>. This will open a new tab for you.</li>
+<li>In the left side panel, locate the <strong><em>Share with Me</em></strong>tab and click it.</li>
+<li>Locate the <strong><em>Data Analytics folder</em></strong>.</li>
+<li>Once that you are inside the folder, you will see the <strong><em>Add Shortcut to My Files</em></strong>,or, <strong><em>Sync Up</em></strong> option in the upper toolbar, depending on your OneDrive version.</li>
+<li>Follow the instructions and sync it to your WJP folder in your computer.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="www/SharePoint.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>By syncing your work with the SharePoint, the whole team is going to be able to see and review changes as they go. However, if more than one person is working on the same file at the same time, it is likely that this working flow will produce several mistakes. Therefore, additionally to this shared cloud storage system, we need a version control tool that will allow us to modify and collaborate in team projects without these kind of issues. Given that most of our work is focused in coding, we use <strong><em>Git Version Control</em></strong> and the <strong><em>GitHub</em></strong> platform for this.</p>
 </section>
 <section id="git" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="git"><span class="header-section-number">1.2</span> Git</h2>
 <p><a href="https://git-scm.com/">Git</a> is a free and open source software that allows users to set up a version control system designed to handle projects. Given the nature of its features, it is normally used for collaboratively developing code and data integrity. <a href="https://github.com/">GitHub</a> is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code. For a gentle introduction to Git and GitHub, see the following <a href="https://kinsta.com/knowledgebase/what-is-github/">post</a> published by Kinsta. For a more in depth introduction, please refer to the <a href="https://docs.github.com/en">GitHub documentation</a>.</p>
+<p>&lt;iframe width=“560” height=“315” src=“https://www.youtube.com/embed/RGOj5yH7evk” title=“YouTube video player” frameborder=“0” allow=“accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture” allowfullscreen&gt;&lt;/iframe&gt;</p>
 <p>Using the Git features allow us to simultaneously work on the same project and even in the same code without worrying about interfering with other members of the team. As a rule, every project carried by the DAU has a code administrator who is in charge of setting up the GitHub repository and add other members of the team as project collaborators. Additionally, the code administrator is in charge of setting the <em>main branch</em> and the initial structure of the code (see the <span class="citation" data-cites="data-management">(<a href="#ref-data-management" role="doc-biblioref"><strong>data-management?</strong></a>)</span> section on this chapter). It is required that the GitHub repository have its <em>main branch</em> in its respective SharePoint folder.</p>
+<p><strong>Note:</strong> It is highly recommended to create the repository from <a href="https://github.com/">GitHub.com</a> and not from the local machine to avoid the initial commit that can include system files such as <strong>.DS_STORE</strong> files</p>
 <p>We use convergence development<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> to collaboratively code in the same project. For this, it is highly recommended that each team member works on a separate <em>branch</em> and, once the data routine is done, the auxiliary branches can be merged into the main branch of the repository. Collaborators that are not the code administrator have the option to clone the GitHub repository in their computer in a local directory that it is not sync to the SharePoint and work in their respective branch from a local copy outside the SharePoint. In other words, it is only the functional final version contained inside the <em>main branch</em> the one that it is going to be sync in SharePoint.</p>
 <p><strong>Important:</strong> GitHub is used to keep track of the code we use in each project. Under no circumstance, we will include the data sources in the online repositories.</p>
 </section>
@@ -172,10 +184,10 @@ ul.task-list{list-style: none;}
 </section>
 <section id="data-management" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="data-management"><span class="header-section-number">1.4</span> Data Management</h2>
-<p>The University of California San Diego (UC San Diego) has a <a href="https://compass.ucsd.edu/data-management">Data Management Best Practices</a> that reviews common guidelines for managing research data. In this handbook, I will focus on two topics mentioned by those guidelines: Data Organization and Data Documentation.</p>
-<section id="data-organization" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="data-organization"><span class="header-section-number">1.4.1</span> Data Organization</h3>
-<p>The data organization involves three important elements: filing system, naming conventions and data granularity.</p>
+<p>The University of California San Diego (UC San Diego) has a <a href="https://compass.ucsd.edu/data-management">Data Management Best Practices</a> that reviews common guidelines for managing research data. In this handbook, I will focus on two topics mentioned by those guidelines: File Organization and Documentation.</p>
+<section id="file-organization" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="file-organization"><span class="header-section-number">1.4.1</span> File Organization</h3>
+<p>The file organization involves two important elements: filing system and naming conventions.</p>
 <p>A filing system is basically the organization structure (directories, folders, sub-folders, etc) in which files are stored. There are no standard rules about how this should be done. However, the chosen filing system needs to make sense not only to the person currently working on a given project but to anyone going through these files in the future. As a rule, each project would have the following sub-folders:</p>
 <ul>
 <li><p>Code: Depending on the complexity of the project, you could choose to create separate directories within the Code folder for Stata, R or Python files.</p></li>
@@ -193,14 +205,30 @@ ul.task-list{list-style: none;}
 <li><p>Avoid special characters such as $, #, ^, &amp; in the file names.</p></li>
 <li><p>Be consistent not only along the project but also across different projects. If all different data files and routines are named in the same way, it’s easier for you to use those tools across projects and re-factor routines.</p></li>
 </ul>
+</section>
+<section id="documentation" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="documentation"><span class="header-section-number">1.4.2</span> Documentation</h3>
+<p>When initializing the GitHub repository, we strongly suggest to include a README file with it. Such file should be a Markdown document including the following elements:</p>
+<ul>
+<li><p>A brief description of the project and the role of the DAU in it.</p></li>
+<li><p>Referred person contact, which should the project leader and the code administrator.</p></li>
+<li><p>A brief description of the filing system along with what to find in each sub-directory.</p></li>
+<li><p>Given that no data is uploaded into the online repositories, include the following descriptions:</p>
+<ul>
+<li><p>Data needed to run the code: source and process to obtain it.</p></li>
+<li><p>Location of the data in the SharePoint.</p></li>
+</ul></li>
+<li><p>A brief description on how to read the code with, if possible, visual aids.</p></li>
+</ul>
+<p>For an example on one of these files, please check the following README file. If possible, use this example as a template for future projects.</p>
 
 
 </section>
 </section>
-<section class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1" role="doc-endnote"><p>For more information about convergence development and branches, we advise you to refer to this <a href="https://www.pluralsight.com/blog/software-development/the-definitive-guide-to-forks-and-branches-in-git">article</a> from Pluralsight.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>For more information about convergence development and branches, we advise you to refer to this <a href="https://www.pluralsight.com/blog/software-development/the-definitive-guide-to-forks-and-branches-in-git">article</a> from Pluralsight.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -274,7 +302,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
@@ -319,7 +348,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
