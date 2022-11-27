@@ -1,34 +1,33 @@
 # Workflow
 
-In this chapter, we will cover the basic guidelines and issues related to the DAU workflow when programming with R and R Studio. Therefore, in order to assimilate the content in this chapter (and the entire handbook) we will require you to have the following:
-
--   An intermediate knowledge of R language.
-
--   R Studio is installed in your computer, however, you are free to use any other IDE of your choice.
-
--   A basic knowledge of [Git](https://git-scm.com/).
-
--   A [GitHub](https://github.com/) account.
-
--   Access to the DAU's SharePoint
-
--   Although is not required, we strongly advise you to install [GitHub Desktop](https://desktop.github.com/).
-
-If you are new to R, I would recommend you to check the [Hands-On Programming with R](https://jjallaire.github.io/hopr/) book written by Garrett Grolemund. If you are already comfortable with the R programming language but you need an introduction on how to analyze data using it, I would suggest you to read the [R for Data Science](https://r4ds.had.co.nz/) book edited by the R4DS team.
+In this chapter, we will cover the basic guidelines and issues related to the prefered workflow when programming with R programming language. This chapter will cover four different aspects: a) *Cloud Storage*, b) *Version Control System*, c) *R Studio Projects*, and d) *File Management practices*.
 
 ## SharePoint
 
-All files used by the DAU are stored in the Data Analytics folder within the organization's SharePoint. And, as a rule, you are required to work and modify these files directly from this online directory. In order to achieve this, you will need to [download the OneDrive app](https://www.microsoft.com/en-us/microsoft-365/onedrive/download) in your computer and sign in using your WJP account. If you are already using One Drive with your personal account, you can add an additional work account which will function parallel to your personal account in your computer. For more information, see the following [website](https://support.microsoft.com/en-us/office/how-to-add-an-account-in-onedrive-31b59063-5a94-4847-b846-c13b9e7635e2).
+All files used by the DAU are stored in the Data Analytics folder within the organization's SharePoint. This is done in order to provide an easy access to all members of the team. As a rule, you are required to work and modify these files directly from this online directory. To achieve this, you will need to [download the OneDrive app](https://www.microsoft.com/en-us/microsoft-365/onedrive/download) in your computer and sign in using your WJP account. If you are already using One Drive with your personal account, you can add an additional professional account which will function parallel to your personal account in your computer. For more information, see the following [website](https://support.microsoft.com/en-us/office/how-to-add-an-account-in-onedrive-31b59063-5a94-4847-b846-c13b9e7635e2).
 
-Given that the DAU SharePoint is a directory created and administered by the organization, you will have to sync this directory to your own OneDrive WJP Account. In order to do this, go to the Data Analytics directory using OneDrive Online and, once you are there, you will see the ***Add Shortcut to My Files*** option in the main panel headers. Follow the instructions and sync it to your WJP folder in your computer.
+Given that the DAU SharePoint is a directory created and administered by the organization, you will have to sync this directory to your own OneDrive WJP Account. In order to achieve this, follow these steps:
 
-By syncing your work with the SharePoint, the whole team is going to be able to see and review changes as they go. However, if more than one person is working on the same file, it is likely that this working flow will produce several mistakes. Therefore, we need a version control tool that will allow us to modify and collaborate in team projects without these kind of issues. Given that most of our work is focused in coding, we use Git and the GitHub platform for this.
+1.  Login into your WJP Outlook account in any web browser.
+2.  Once into your account, access ***OneDrive***. This will open a new tab for you.
+3.  In the left side panel, locate the ***Share with Me***tab and click it.
+4.  Locate the ***Data Analytics folder***.
+5.  Once that you are inside the folder, you will see the ***Add Shortcut to My Files***,or, ***Sync Up*** option in the upper toolbar, depending on your OneDrive version.
+6.  Follow the instructions and sync it to your WJP folder in your computer.
+
+![](www/SharePoint.png){fig-align="center"}
+
+By syncing your work with the SharePoint, the whole team is going to be able to see and review changes as they go. However, if more than one person is working on the same file at the same time, it is likely that this working flow will produce several mistakes. Therefore, additionally to this shared cloud storage system, we need a version control tool that will allow us to modify and collaborate in team projects without these kind of issues. Given that most of our work is focused in coding, we use ***Git Version Control*** and the ***GitHub*** platform for this.
 
 ## Git
 
 [Git](https://git-scm.com/) is a free and open source software that allows users to set up a version control system designed to handle projects. Given the nature of its features, it is normally used for collaboratively developing code and data integrity. [GitHub](https://github.com/) is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code. For a gentle introduction to Git and GitHub, see the following [post](https://kinsta.com/knowledgebase/what-is-github/) published by Kinsta. For a more in depth introduction, please refer to the [GitHub documentation](https://docs.github.com/en).
 
+\<iframe width="560" height="315" src="https://www.youtube.com/embed/RGOj5yH7evk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen\>\</iframe\>
+
 Using the Git features allow us to simultaneously work on the same project and even in the same code without worrying about interfering with other members of the team. As a rule, every project carried by the DAU has a code administrator who is in charge of setting up the GitHub repository and add other members of the team as project collaborators. Additionally, the code administrator is in charge of setting the *main branch* and the initial structure of the code (see the @data-management section on this chapter). It is required that the GitHub repository have its *main branch* in its respective SharePoint folder.
+
+**Note:** It is highly recommended to create the repository from [GitHub.com](https://github.com/) and not from the local machine to avoid the initial commit that can include system files such as **.DS_STORE** files
 
 We use convergence development[^workflow-1] to collaboratively code in the same project. For this, it is highly recommended that each team member works on a separate *branch* and, once the data routine is done, the auxiliary branches can be merged into the main branch of the repository. Collaborators that are not the code administrator have the option to clone the GitHub repository in their computer in a local directory that it is not sync to the SharePoint and work in their respective branch from a local copy outside the SharePoint. In other words, it is only the functional final version contained inside the *main branch* the one that it is going to be sync in SharePoint.
 
@@ -46,11 +45,11 @@ As a rule, every project has a file named `project-name.Rproj` in its root direc
 
 ## Data Management {#data-management}
 
-The University of California San Diego (UC San Diego) has a [Data Management Best Practices](https://compass.ucsd.edu/data-management) that reviews common guidelines for managing research data. In this handbook, I will focus on two topics mentioned by those guidelines: Data Organization and Data Documentation.
+The University of California San Diego (UC San Diego) has a [Data Management Best Practices](https://compass.ucsd.edu/data-management) that reviews common guidelines for managing research data. In this handbook, I will focus on two topics mentioned by those guidelines: File Organization and Documentation.
 
-### Data Organization
+### File Organization
 
-The data organization involves three important elements: filing system, naming conventions and data granularity.
+The file organization involves two important elements: filing system and naming conventions.
 
 A filing system is basically the organization structure (directories, folders, sub-folders, etc) in which files are stored. There are no standard rules about how this should be done. However, the chosen filing system needs to make sense not only to the person currently working on a given project but to anyone going through these files in the future. As a rule, each project would have the following sub-folders:
 
@@ -73,3 +72,23 @@ In relation to the naming conventions, these are a set of rules designed to comp
 -   Avoid special characters such as \$, #, \^, & in the file names.
 
 -   Be consistent not only along the project but also across different projects. If all different data files and routines are named in the same way, it's easier for you to use those tools across projects and re-factor routines.
+
+### Documentation
+
+When initializing the GitHub repository, we strongly suggest to include a README file with it. Such file should be a Markdown document including the following elements:
+
+-   A brief description of the project and the role of the DAU in it.
+
+-   Referred person contact, which should the project leader and the code administrator.
+
+-   A brief description of the filing system along with what to find in each sub-directory.
+
+-   Given that no data is uploaded into the online repositories, include the following descriptions:
+
+    -   Data needed to run the code: source and process to obtain it.
+
+    -   Location of the data in the SharePoint.
+
+-   A brief description on how to read the code with, if possible, visual aids.
+
+For an example on one of these files, please check the following README file. If possible, use this example as a template for future projects.

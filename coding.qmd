@@ -6,9 +6,9 @@ Remember, when writing a code, you are just the author not the audience. Therefo
 
 ## Script Headline and Outline
 
-The headline is very important because it gives the general information about the script, its purposes, the authors, the version and last modification date, among others. Within the DAU, we have the following template for this headline:
+The headline is very important because it gives the general information about the script, its purposes, the authors, the version and last modification date, among others. Within the DAU, we have the [following template](https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R):
 
-``` R
+``` r
 ## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##
 ## Script:            PROJECT NAME - Script Purpose
@@ -23,19 +23,9 @@ The headline is very important because it gives the general information about th
 ## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ```
 
-As you can see, the template highlights the most important information that we need to know when opening a script, even when we are new to it. However, this is just a first step in the process. Our template goes beyond and it also displays how to use Titles, Subtitles and Steps within the script.
+As you can see, the template highlights the most important information that we need to know when opening a script, even when we are new to it. However, this is just a first step in the process. [Our template](https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R) goes beyond and it also displays how to use Titles, Subtitles and Steps within the script:
 
-``` R
-## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-##
-#                0.  SETTINGS                                                                            ----
-##
-## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-# Step 1
-
-# Step 2
-
+``` r
 ## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ##
 #                1.  TITLE                                                                               ----
@@ -55,5 +45,7 @@ As you can see, the template highlights the most important information that we n
 
 # Step 2
 ```
+
+The main objective of this style is to provide an organized outline for the script.
 
 ![](www/Header.png){fig-align="center"}

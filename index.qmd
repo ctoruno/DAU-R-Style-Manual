@@ -1,9 +1,43 @@
 ![Zacatal by nicaraguan painter Raúl Marín](www/cover.jpeg){alt="Zacatal by nicaraguan painter Raúl Marín" fig-alt="Zacatal by nicaraguan painter Raúl Marín" fig-align="center"}
 
-# Preface {.unnumbered}
+# Introduction {.unnumbered}
 
-This coding handbook is a continuous work mantained by the Data Analytics Unit (DAU) from The World Justice Project (WJP) with the aim of unifying the different aspect of the carried by the unit. In this book, you will find not only general guidelines but also several issues that will help the reader to understand and contribute in our tasks.
+This coding handbook is a continuous work maintained by the Data Analytics Unit (DAU) from The World Justice Project (WJP) with the aim of unifying the different aspect of the carried by the unit. In this book, you will find not only general guidelines but also several issues that will help the reader to understand and contribute in our tasks.
 
 The handbook cover aspects related to the general workflow, the coding process and the visualization guidelines used by the team. As mentioned earlier, this book is a continuous work in progress and, as such, the rules and guides are not written in stone but rather, subject to improvements that every member of the team is open to discuss and include in this handbook.
+
+## Prerequisites
+
+In order to assimilate the content in this chapter (and the entire handbook) we will require you to have the following:
+
+-   An intermediate knowledge of R language.
+
+-   R Studio is installed in your computer, however, you are free to use any other Integrated Development Environment (IDE) or the Text Editor of your choice.
+
+-   A basic knowledge of [Git](https://git-scm.com/).
+
+-   A [GitHub](https://github.com/) account.
+
+-   Access to the DAU's SharePoint
+
+-   Although is not required, we strongly advise you to install [GitHub Desktop](https://desktop.github.com/).
+
+If you are new to R, I would recommend you to check the [Hands-On Programming with R](https://jjallaire.github.io/hopr/) book written by Garrett Grolemund. If you are already comfortable with the R programming language but you need an introduction on how to analyze data using it, I would suggest you to read the [R for Data Science](https://r4ds.had.co.nz/) book edited by the R4DS team.
+
+## Handbook Structure
+
+The content in this Handbook is organized as follows:
+
+-   **Part I: Workflow**: A brief chapter in which we will cover the basic guidelines and issues related to the DAU workflow when programming with R and R Studio along with the basic setup.
+
+-   **Part II: Coding**: The main chapter of the handbook where we discuss the main aspects of the coding style when working in projects related to the DAU.
+
+-   **Part III: Viz Aesthetics**: Manual of style, style guidelines, pre-defined settings and other aspects related exclusively to data visualization are presented in this chapter.
+
+-   **Appendix**: Final part of the handbook where you can read about R-related content for the daily tasks that you will have to face as a member of the DAU.
+
+## Licence
+
+This website is free to use and it is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License. Physical copies of this book are not currently available. If you are not a member of the DAU team, feel free to report typos, request information or even contribute by commenting or leaving a pull request at [ctoruno/DAU-R-Style-Manual](https://github.com/ctoruno/DAU-R-Style-Manual).
 
 To learn more about the work of The World Justice Project, please visit the official [website](https://worldjusticeproject.org/).
