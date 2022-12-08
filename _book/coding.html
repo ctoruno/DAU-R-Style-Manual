@@ -180,6 +180,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#script-headline-and-outline" id="toc-script-headline-and-outline" class="nav-link active" data-scroll-target="#script-headline-and-outline"><span class="toc-section-number">2.1</span>  Script Headline and Outline</a></li>
+  <li><a href="#loading-packages" id="toc-loading-packages" class="nav-link" data-scroll-target="#loading-packages"><span class="toc-section-number">2.2</span>  Loading Packages</a></li>
+  <li><a href="#coding-style" id="toc-coding-style" class="nav-link" data-scroll-target="#coding-style"><span class="toc-section-number">2.3</span>  Coding Style</a>
+  <ul class="collapse">
+  <li><a href="#the-tidyverse-style-guide" id="toc-the-tidyverse-style-guide" class="nav-link" data-scroll-target="#the-tidyverse-style-guide"><span class="toc-section-number">2.3.1</span>  The Tidyverse Style guide</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -202,11 +207,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>In this chapter, we will cover some basic guidelines and styling rules related to how the coding is done at the DAU-WJP. When programming data analysis routines, it is very hard to vanquish the personal style the every person has. Therefore, this chapter is focused on giving general guidelines that will allow to standardize their codes for an easy collaboration among all team members.</p>
-<p>Remember, when writing a code, you are just the author not the audience. Therefore, think on how would other people understand what you are writing without the ideas and knowledge you have at the moment of creating your code. Writing comments, using titles as step-by-step guides, documenting the issues, all of these actions will greatly help other team members to understand what you have done and why you have done it. Also, this will also help you in the future to understand what you did in the past and reduce the level of dependency of a given project to the referring people.</p>
+<p>In this chapter, we will cover some basic guidelines and styling rules related to how the coding is done at the DAU-WJP. When programming data analysis routines, it is very hard to vanquish the personal style that every person has. Therefore, this chapter is focused on giving general guidelines that will allow to standardize their codes for an easy collaboration among all team members.</p>
+<p>Remember, when writing a code, you are just the author not the audience. Therefore, think on how would other people understand what you are writing without the ideas and knowledge you have at the moment of creating your code. Writing comments, using titles as step-by-step guides, documenting the issues, all of these actions will greatly help other team members to understand what you have done and why you have done it. Also, this will help you in the future to understand what you did in the past and reduce the level of dependency of a given project on its collaborators.</p>
 <section id="script-headline-and-outline" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="script-headline-and-outline"><span class="header-section-number">2.1</span> Script Headline and Outline</h2>
-<p>The headline is very important because it gives the general information about the script, its purposes, the authors, the version and last modification date, among others. Within the DAU, we have the <a href="https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R">following template</a>:</p>
+<p>The headline is very important because it gives the general information about the script, its purposes, the authors, the program version, among other important details. Within the DAU, we have the <a href="https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R">following template</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Script:            PROJECT NAME - Script Purpose</span></span>
@@ -219,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## This version:      Month Day, Year</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>As you can see, the template highlights the most important information that we need to know when opening a script, even when we are new to it. However, this is just a first step in the process. <a href="https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R">Our template</a> goes beyond and it also displays how to use Titles, Subtitles and Steps within the script:</p>
+<p>As you can see, the template highlights the most important information that we need to know when opening a script. This information should give any team member a general idea on the project status even if this person has never collaborated in the project before. However, this is just a first step in the process. <a href="https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R">Our template</a> goes beyond and it also displays how to use Titles, Subtitles and Steps within the script:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                1.  TITLE                                                                               ----</span></span>
@@ -238,14 +243,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The main objective of this style is to provide an organized outline for the script.</p>
+<p>Unlike the Headline seen above, the use of this outline to structure your code will vary from script to script. For example, if you are working on a very short routine of less than 100 lines. You might not need to use titles and subtitles and you would rather choose to only use steps. Therefore, the extent to which this outline is feasible will be a decision of the code administrator.</p>
+<p>The main objective of this outline is to provide an organized outline for the script. The utility of this outline increase with the complexity of the code. Although we strongly advice you to avoid very long routines (we will come back to this when we talk about refactoring and modules), we understand that sometimes the code might be very complex by nature. As an example, look at the <a href="https://github.com/ctoruno/EU-Lawyer-Data/blob/main/app.R">following script</a> from the <a href="https://carlos-toruno.shinyapps.io/EU-Lawyer-Data/">Shiny App</a> that we prepared for the EU Project. Even though the code extends for less than 500 lines, it is difficult to read due to the <strong><em>reactivity</em></strong> and <strong><em>laziness</em></strong> concepts that come along when programming a Shiny App.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="www/Header.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
+</section>
+<section id="loading-packages" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">2.2</span> Loading Packages</h2>
+<p>On any routine, the first thing is to load the packages that you will be using in the code. Usually, you will see routines calling the <code>library</code> or <code>request</code> modules to load the needed packages. However, given that this is a team collaboration, not everyone have these packages installed or, even if they have it, the script requires a certain version of the package in order to run. Therefore, we need to, not only load, but also check for these other requirements as well.</p>
+<p>W=To achieve this, we could write down a series of if conditions. However, we choose to rely on the <a href="https://trinker.github.io/pacman/">pacman package</a> to do this. As such, we only request that every team member has this package installed in their local machine. If every team member has it installed, it is quite easy to load the required libraries by calling the <code>p_load</code> function. Take a look at the following example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Required packages</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Development version</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">p_load_gh</span>(<span class="at">char =</span> <span class="fu">c</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Visualizations</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"xl0418/ggradar2"</span>, <span class="st">"davidsjoberg/ggsankey"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">dependencies =</span> T</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Stable CRAN release</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">p_load</span>(<span class="at">char =</span> <span class="fu">c</span>(</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Visualizations</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"showtext"</span>, <span class="st">"ggtext"</span>, <span class="st">"ggsankey"</span>, <span class="st">"ggrepel"</span>, <span class="st">"ggplotify"</span>, <span class="st">"gridExtra"</span>, <span class="st">"ggradar2"</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"patchwork"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Data Loading</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"haven"</span>, <span class="st">"readxl"</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Other</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="st">"margins"</span>,  </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Good 'ol Tidyverse</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">"tidyverse"</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Three things are worth noticing. First, if some packages require the development version, we use the <code>p_load_gh</code> to install their latest release from GitHub. Second, we always install the development releases first and then the stable CRAN version at last. This is done in order to leave the tidyverse for last and avoid any other package to mask over the tidyverse functions. Third, for very complex routines, we might need to load several packages, it is strongly recommended to comment on the utility and need for each package so all team members can have a general idea on their use before reading the respective documentation.</p>
+</section>
+<section id="coding-style" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="coding-style"><span class="header-section-number">2.3</span> Coding Style</h2>
+<section id="the-tidyverse-style-guide" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="the-tidyverse-style-guide"><span class="header-section-number">2.3.1</span> The Tidyverse Style guide</h3>
+<p>In the DAU, we strongly rely on the guidelines defined by <em>Hadley Wickham</em> in its <a href="https://style.tidyverse.org/index.html">Tidyverse Style Guide</a>. We request that every DAU member read this style guide before collaborating with other team members in a given project. As stated in the first page of the guide:</p>
+<blockquote class="blockquote">
+<p><em>Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.</em></p>
+</blockquote>
+<p>This guide is, as its name suggest, just a guide. As such, some of its guidelines might not be consistent with the coding style that the DAU as a whole have. Therefore, we do not rely on the use of <a href="https://styler.r-lib.org/">styler</a> and <a href="https://lintr.r-lib.org/">lintr</a> packages to style our codes. In what follows, we will highlight some topics and also complement with some of our own style guidelines the aforementioned reference.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
