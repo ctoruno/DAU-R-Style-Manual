@@ -25,13 +25,13 @@ By syncing your work with the SharePoint, the whole team is going to be able to 
 
 Using the Git features allow us to simultaneously work on the same project and even in the same code without worrying about interfering with other members of the team. As a rule, every project carried by the DAU has a code administrator who is in charge of setting up the GitHub repository and add other members of the team as project collaborators. Additionally, the code administrator is in charge of setting the *main branch* and the initial structure of the code (see the @data-management section on this chapter). It is required that the GitHub repository have its *main branch* in its respective SharePoint folder.
 
-**Note:** It is highly recommended to create the repository from [GitHub.com](https://github.com/) and not from the local machine to avoid the initial commit that can include system files such as **.DS_STORE** files
+> **Note:** It is highly recommended to create the repository from [GitHub.com](https://github.com/) and not from the local machine to avoid the initial commit that can include system files such as **.DS_STORE** files
 
 We use convergence development[^workflow-1] to collaboratively code in the same project. For this, it is highly recommended that each team member works on a separate *branch* and, once the data routine is done, the auxiliary branches can be merged into the main branch of the repository. Collaborators that are not the code administrator have the option to clone the GitHub repository in their computer in a local directory that it is not sync to the SharePoint and work in their respective branch from a local copy outside the SharePoint. In other words, it is only the functional final version contained inside the *main branch* the one that it is going to be sync in SharePoint.
 
 [^workflow-1]: For more information about convergence development and branches, we advise you to refer to this [article](https://www.pluralsight.com/blog/software-development/the-definitive-guide-to-forks-and-branches-in-git) from Pluralsight.
 
-**Important:** GitHub is used to keep track of the code we use in each project. Under no circumstance, we will include the data sources in the online repositories.
+> **Important:** GitHub is used to keep track of the code we use in each project. Under no circumstance, we will include the data sources in the online repositories.
 
 ## Projects
 
@@ -89,4 +89,4 @@ When initializing the GitHub repository, we strongly suggest to include a README
 
 -   A brief description on how to read the code with, if possible, visual aids.
 
-For an example on one of these files, please check the following README file. If possible, use this example as a template for future projects.
+For an example on one of these files, please check the [following README file](https://github.com/ctoruno/WJP-Resources/blob/main/README_template.md). If possible, use this example as a template for future projects.
