@@ -1,5 +1,5 @@
 # DAU-R-Style-Manual
-Quarto book project for the R Coding Manual to be used by the Data Analytics Unit (DAU) of the World Justice Project
+Quarto book project for the R Coding Manual to be used by the Data Analytics Unit (DAU) of the World Justice Project. The current version of the handbook can be found [here](https://ctoruno.quarto.pub/wjp-r-handbook/).
 
 # Desscription
 This coding handbook is a continuous work maintained by the DAU from The World Justice Project (WJP) with the aim of unifying the different aspect of the carried by the unit. In this book, you will find not only general guidelines but also several issues that will help the reader to understand and contribute in our tasks.
