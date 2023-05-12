@@ -6,7 +6,7 @@ Remember, when writing a code, you are just the author not the audience. Therefo
 
 ## Script Headline and Outline
 
-The headline is very important because it gives the general information about the script, its purposes, the authors, the program version, among other important details. Within the DAU, we have the [following template](https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R):
+The headline is very important because it gives the general information about the script, its purposes, the authors, the program version, among other important details. Within the DAU, we have the [following template](https://github.com/ctoruno/WJP-Resources/blob/main/templates/outline_template.R):
 
 ``` r
 ## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -23,7 +23,7 @@ The headline is very important because it gives the general information about th
 ## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ```
 
-As you can see, the template highlights the most important information that we need to know when opening a script. This information should give any team member a general idea on the project status even if this person has never collaborated in the project before. However, this is just a first step in the process. [Our template](https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R) goes beyond and it also displays how to use Titles, Subtitles and Steps within the script:
+As you can see, the template highlights the most important information that we need to know when opening a script. This information should give any team member a general idea on the project status even if this person has never collaborated in the project before. However, this is just a first step in the process. [Our template](https://github.com/ctoruno/WJP-Resources/blob/main/templates/outline_template.R) goes beyond and it also displays how to use Titles, Subtitles and Steps within the script:
 
 ``` r
 ## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -424,31 +424,6 @@ Let's do exactly that:
 data_modified <- data %>%
   mutate(
     
-    # Defining text
-    label =  case_when(
-      text == 'q49d_G1_merge' ~ paste("Ensures **uniform quality** by<br>",
-                                      "providing equal service<br>",
-                                      "regardless of where<br>they live"),
-      text == 'q49c_G1' ~ paste("Ensures everyone<br>has **access** to", 
-                                "the<br>justice system"),
-      text == 'q49b_G1' ~ paste("Ensures **timeliness**<br>by dealing",
-                                "with<br>cases promptly",
-                                "and<br>efficiently"),
-      text == 'q49a'    ~ paste("Is **effective** in bringing<br>people who",
-                             "commit<br>crimes to justice")
-      text == 'q49b_G2' ~ paste("Ensures **equal treatment<br>of victims**",
-                                "by allowing all<br>",
-                                "victims to seek justice<br>regardless of who they are"),
-      text == 'q49e_G2' ~ paste("Safeguards the<br>**presumption of<br>",
-                                "innocence** by treating<br>those",
-                                "accused of<br>crimes as innocent<br>until proven guilty"),
-      text == 'q49c_G2' ~ paste("Ensures **equal treatment of<br>the accused**",
-                                "by giving all a<br>",
-                                "fair trial regardless of who<br>they are"),
-      text == 'q49e_G1' ~ paste("Gives **appropriate<br>punishments** that",
-                                "fit<br>the crime")
-    ),
-    
     # Converting labels into HTML syntax
     across(label,
            function(raw_label){
@@ -501,3 +476,13 @@ Breaking your code into modules makes your code easier to read because it means 
 -   Easier to collaborate with
 
 Overall, it has a lot of advantages in comparison to monolithic and overwhelming code. Nonetheless, if you overuse it without a logic behind, it can end up making your code messy. As a result, you need to be careful when making modular programming.
+
+## Issues Logbook
+
+As mentioned before, the DAU team keeps records of significant issues encountered during each project in order to facilitate the solution process in future projects. These records are kept in the [Issues Logbook](https://github.com/ctoruno/WJP-Resources/tree/main/issues-logbook) of the DAU.
+
+As a rule, the Issues Logbook is a GitHub repository maintained by the DAU team. It is organized by relevant topic or by project name. As a rule, each issue record should be saved as a *Markdown file* using a short name that describes its content and substituing spaces for hyphens. For example: `Pandoc-variable-in-YAML.md`.
+
+The markdown file should follow the next structure: 1. Team member that identified the issue. 2. Short description of the problem or issue. 3. Short description of the solution (if any). 4. Additional notes (if any).
+
+You can use [this template](https://github.com/ctoruno/WJP-Resources/blob/main/templates/issue_record_template.md) for recording issues. For an example of an actual issue recorded, you can check [this example](https://github.com/ctoruno/WJP-Resources/blob/main/issues-logbook/R-Markdown/Knitr-directory.md).

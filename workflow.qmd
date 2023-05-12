@@ -23,7 +23,7 @@ By syncing your work with the SharePoint, the whole team is going to be able to 
 
 [Git](https://git-scm.com/) is a free and open source software that allows users to set up a version control system designed to handle projects. Given the nature of its features, it is normally used for collaboratively developing code and data integrity. [GitHub](https://github.com/) is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code. For a gentle introduction to Git and GitHub, see the following [post](https://kinsta.com/knowledgebase/what-is-github/) published by Kinsta. For a more in depth introduction, please refer to the [GitHub documentation](https://docs.github.com/en) or watch [this video tutorial](https://www.youtube.com/watch?v=RGOj5yH7evk&t=3367s).
 
-Using the Git features allow us to simultaneously work on the same project and even in the same code without worrying about interfering with other members of the team. As a rule, every project carried by the DAU has a code administrator who is in charge of setting up the GitHub repository and add other members of the team as project collaborators. Additionally, the code administrator is in charge of setting the *main branch* and the initial structure of the code (see the @data-management section on this chapter). It is required that the GitHub repository have its *main branch* in its respective SharePoint folder.
+Using the Git features allow us to simultaneously work on the same project and even in the same code without worrying about interfering with other members of the team. As a rule, every project carried by the DAU has a code administrator who is in charge of setting up the GitHub repository and add other members of the team as project collaborators. Additionally, the code administrator is in charge of setting the *main branch* and the initial structure of the code (see the \[data-management\](https://ctoruno.quarto.pub/wjp-r-handbook/workflow.html#data-management) section on this chapter). It is required that the GitHub repository have its *main branch* in its respective SharePoint folder.
 
 > **Note:** It is highly recommended to create the repository from [GitHub.com](https://github.com/) and not from the local machine to avoid the initial commit that can include system files such as **.DS_STORE** files
 
@@ -40,6 +40,48 @@ When you load a data set or source an R script, you will have to set up the work
 A project is a feature that allow us to work with the analysis we are carrying without having to worry about where does these files are stored or who is working on them. Say goodbye to `setwd("...")`. Besides managing relatives paths, R projects allow users to keep a history of actions performed and even keep the objects in your environment. Because of this, projects are the cornerstone of our work when performing analysis with R.
 
 As a rule, every project has a file named `project-name.Rproj` in its root directory and open it should be the first action when working on a project. For more information on working with R projects, refer to the [Workflow section](https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects) from the R for Data Science book.
+
+## SharePoint Global Access
+
+As mentioned before, we try to keep everything within the Project's wworking directory. Nevertheless, due to their nature, sometimes we will have to load file from outside this directory. For example, we will constantly loading the GPP or QRQ datasets or the WJP font files. Instead of copying these files into the projects directory, we access them through what we call a Global Access. These files are located in a static path inside the DAU SharePoint. Assuming that you have installed the desktop version of OneDrive, you can access these files quite easily. However, this path is unique in every local machine. Therefore, it is very common to find a variable named `path2SP` the following lines of code in the settings of every project:
+
+```{r}
+#| eval: false
+
+## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+##
+## 2.  SharePoint Path                                                      ----
+##
+## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+# SharePoint path
+if (Sys.info()["user"] == "johnDoe") {
+  path2SP <- "/Users/johnDoe/OneDrive-WJP/Data Analytics/"
+
+} else if (Sys.info()["user"] == "anaPerez") {
+  path2SP <- "/CloudStorage/OneDrive-WJP/Data Analytics/"
+  
+} else if (Sys.info()["user"] == "kumikoNagato"){
+  path2SP <- "/Users/kumikoNagato/Library/OneDrive-WJP/Data Analytics/"
+  
+} else{
+  path2SP <- "PLEASE INSERT YOUR PERSONAL PATH TO THE SP DAU DIRECTORY"
+  
+}
+```
+
+This way, loading or accessing files that are outside the Project's directory but inside the DAU SharePoint is possible without adjusting the code everytime a different user tries to run the code. For example, if you would like the user to load the WJP fonts, you simply have to paste their location within the SharePoint and the `path2SP` string to let the code run smoothly between users.
+
+```{r}
+#| eval: false
+
+path2fonts<- paste0(path2SP, "6. Country Reports/0. Fonts/")
+font_add(family     = "Lato Full",
+         regular    = paste0(path2fonts, "Lato-Regular.ttf"),
+         italic     = paste0(path2fonts, "Lato-LightItalic.ttf"),
+         bold       = paste0(path2fonts, "Lato-Bold.ttf"),
+         bolditalic = paste0(path2fonts, "Lato-BoldItalic.ttf"))
+```
 
 ## Data Management {#data-management}
 
@@ -89,4 +131,6 @@ When initializing the GitHub repository, we strongly suggest to include a README
 
 -   A brief description on how to read the code with, if possible, visual aids.
 
-For an example on one of these files, please check the [following README file](https://github.com/ctoruno/WJP-Resources/blob/main/README_template.md). If possible, use this example as a template for future projects.
+For an example on one of these files, please check the [following README file](https://github.com/ctoruno/LAC-Reports/blob/main/README.md). If possible, use this example as a template for future projects.
+
+Depending on the complexity of each project, the team can add any suitable documentation files if needed. Additionally, the DAU keeps records of significant issues encountered during each project in order to facilitate the solution process in future projects. These records are kept in the [Issues Logbook](https://github.com/ctoruno/WJP-Resources/tree/main/issues-logbook) of the DAU.

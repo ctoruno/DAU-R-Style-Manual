@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,6 +93,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./vizaes.html" rel="next">
 <link href="./workflow.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -170,6 +171,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <a href="./coding.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coding</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vizaes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visualization Aesthetics</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -189,6 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#indentations-and-column-alignment" id="toc-indentations-and-column-alignment" class="nav-link" data-scroll-target="#indentations-and-column-alignment"><span class="toc-section-number">2.3.4</span>  Indentations and column alignment</a></li>
   </ul></li>
   <li><a href="#re-factoring-and-modular-programming" id="toc-re-factoring-and-modular-programming" class="nav-link" data-scroll-target="#re-factoring-and-modular-programming"><span class="toc-section-number">2.4</span>  Re-factoring and modular programming</a></li>
+  <li><a href="#issues-logbook" id="toc-issues-logbook" class="nav-link" data-scroll-target="#issues-logbook"><span class="toc-section-number">2.5</span>  Issues Logbook</a></li>
   </ul>
 </nav>
     </div>
@@ -216,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Remember, when writing a code, you are just the author not the audience. Therefore, think on how would other people understand what you are writing without the ideas and knowledge you have at the moment of creating your code. Writing comments, using titles as step-by-step guides, documenting the issues, all of these actions will greatly help other team members to understand what you have done and why you have done it. Also, this will help you in the future to understand what you did in the past and reduce the level of dependency of a given project on its collaborators.</p>
 <section id="script-headline-and-outline" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="script-headline-and-outline"><span class="header-section-number">2.1</span> Script Headline and Outline</h2>
-<p>The headline is very important because it gives the general information about the script, its purposes, the authors, the program version, among other important details. Within the DAU, we have the <a href="https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R">following template</a>:</p>
+<p>The headline is very important because it gives the general information about the script, its purposes, the authors, the program version, among other important details. Within the DAU, we have the <a href="https://github.com/ctoruno/WJP-Resources/blob/main/templates/outline_template.R">following template</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Script:            PROJECT NAME - Script Purpose</span></span>
@@ -229,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="do">## This version:      Month Day, Year</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>As you can see, the template highlights the most important information that we need to know when opening a script. This information should give any team member a general idea on the project status even if this person has never collaborated in the project before. However, this is just a first step in the process. <a href="https://github.com/ctoruno/WJP-Resources/blob/main/outline_template.R">Our template</a> goes beyond and it also displays how to use Titles, Subtitles and Steps within the script:</p>
+<p>As you can see, the template highlights the most important information that we need to know when opening a script. This information should give any team member a general idea on the project status even if this person has never collaborated in the project before. However, this is just a first step in the process. <a href="https://github.com/ctoruno/WJP-Resources/blob/main/templates/outline_template.R">Our template</a> goes beyond and it also displays how to use Titles, Subtitles and Steps within the script:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="do">##</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                1.  TITLE                                                                               ----</span></span>
@@ -581,45 +588,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data_modified <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Defining text</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span>  <span class="fu">case_when</span>(</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      text <span class="sc">==</span> <span class="st">'q49d_G1_merge'</span> <span class="sc">~</span> <span class="fu">paste</span>(<span class="st">"Ensures **uniform quality** by&lt;br&gt;"</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"providing equal service&lt;br&gt;"</span>,</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"regardless of where&lt;br&gt;they live"</span>),</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      text <span class="sc">==</span> <span class="st">'q49c_G1'</span> <span class="sc">~</span> <span class="fu">paste</span>(<span class="st">"Ensures everyone&lt;br&gt;has **access** to"</span>, </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"the&lt;br&gt;justice system"</span>),</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>      text <span class="sc">==</span> <span class="st">'q49b_G1'</span> <span class="sc">~</span> <span class="fu">paste</span>(<span class="st">"Ensures **timeliness**&lt;br&gt;by dealing"</span>,</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"with&lt;br&gt;cases promptly"</span>,</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"and&lt;br&gt;efficiently"</span>),</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>      text <span class="sc">==</span> <span class="st">'q49a'</span>    <span class="sc">~</span> <span class="fu">paste</span>(<span class="st">"Is **effective** in bringing&lt;br&gt;people who"</span>,</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"commit&lt;br&gt;crimes to justice"</span>)</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>      text <span class="sc">==</span> <span class="st">'q49b_G2'</span> <span class="sc">~</span> <span class="fu">paste</span>(<span class="st">"Ensures **equal treatment&lt;br&gt;of victims**"</span>,</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"by allowing all&lt;br&gt;"</span>,</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"victims to seek justice&lt;br&gt;regardless of who they are"</span>),</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>      text <span class="sc">==</span> <span class="st">'q49e_G2'</span> <span class="sc">~</span> <span class="fu">paste</span>(<span class="st">"Safeguards the&lt;br&gt;**presumption of&lt;br&gt;"</span>,</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"innocence** by treating&lt;br&gt;those"</span>,</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"accused of&lt;br&gt;crimes as innocent&lt;br&gt;until proven guilty"</span>),</span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>      text <span class="sc">==</span> <span class="st">'q49c_G2'</span> <span class="sc">~</span> <span class="fu">paste</span>(<span class="st">"Ensures **equal treatment of&lt;br&gt;the accused**"</span>,</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"by giving all a&lt;br&gt;"</span>,</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"fair trial regardless of who&lt;br&gt;they are"</span>),</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>      text <span class="sc">==</span> <span class="st">'q49e_G1'</span> <span class="sc">~</span> <span class="fu">paste</span>(<span class="st">"Gives **appropriate&lt;br&gt;punishments** that"</span>,</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"fit&lt;br&gt;the crime"</span>)</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Converting labels into HTML syntax</span></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(label,</span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>           <span class="cf">function</span>(raw_label){</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>             html <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"&lt;span style='color:"</span>, color_code, </span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>                            <span class="st">";font-size:6.326276mm;font-weight:bold'&gt;"</span>,  </span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>                            value_vectors[text], </span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"&lt;/span&gt;"</span>,</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"&lt;br&gt;"</span>,</span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"&lt;span style='color:#524F4C;font-size:3.514598mm'&gt;"</span>,</span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>                            raw_label,</span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"&lt;/span&gt;"</span>)</span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>             <span class="fu">return</span>(html)</span>
-<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>           })</span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Converting labels into HTML syntax</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(label,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>           <span class="cf">function</span>(raw_label){</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>             html <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"&lt;span style='color:"</span>, color_code, </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                            <span class="st">";font-size:6.326276mm;font-weight:bold'&gt;"</span>,  </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                            value_vectors[text], </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"&lt;/span&gt;"</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"&lt;br&gt;"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"&lt;span style='color:#524F4C;font-size:3.514598mm'&gt;"</span>,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                            raw_label,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                            <span class="st">"&lt;/span&gt;"</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>             <span class="fu">return</span>(html)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>           })</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This way, the code has become shorter and easier to maintain. If we need to change the font size, we do it just one time. Both chunks of code have the same result, but we change the way they produce that result. This process is called <strong>re-factorization</strong>. To learn more about this and all the re-factoring methods, you can check <a href="https://refactoring.guru/refactoring">refactoring.guru</a>.</p>
 <p>Another complementary way to keep your code tidy and easy to maintain is to reduce the length of your script by <em>splitting it into multiple scripts according to their functionality</em> or <strong>modules</strong>. This process is called <strong>modular programming</strong>.</p>
@@ -646,6 +628,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Easier to collaborate with</p></li>
 </ul>
 <p>Overall, it has a lot of advantages in comparison to monolithic and overwhelming code. Nonetheless, if you overuse it without a logic behind, it can end up making your code messy. As a result, you need to be careful when making modular programming.</p>
+</section>
+<section id="issues-logbook" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="issues-logbook"><span class="header-section-number">2.5</span> Issues Logbook</h2>
+<p>As mentioned before, the DAU team keeps records of significant issues encountered during each project in order to facilitate the solution process in future projects. These records are kept in the <a href="https://github.com/ctoruno/WJP-Resources/tree/main/issues-logbook">Issues Logbook</a> of the DAU.</p>
+<p>As a rule, the Issues Logbook is a GitHub repository maintained by the DAU team. It is organized by relevant topic or by project name. As a rule, each issue record should be saved as a <em>Markdown file</em> using a short name that describes its content and substituing spaces for hyphens. For example: <code>Pandoc-variable-in-YAML.md</code>.</p>
+<p>The markdown file should follow the next structure: 1. Team member that identified the issue. 2. Short description of the problem or issue. 3. Short description of the solution (if any). 4. Additional notes (if any).</p>
+<p>You can use <a href="https://github.com/ctoruno/WJP-Resources/blob/main/templates/issue_record_template.md">this template</a> for recording issues. For an example of an actual issue recorded, you can check <a href="https://github.com/ctoruno/WJP-Resources/blob/main/issues-logbook/R-Markdown/Knitr-directory.md">this example</a>.</p>
 
 
 </section>
@@ -805,6 +794,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./vizaes.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visualization Aesthetics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

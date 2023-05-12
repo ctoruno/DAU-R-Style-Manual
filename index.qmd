@@ -2,23 +2,23 @@
 
 # Introduction {.unnumbered}
 
-This coding handbook is a continuous work maintained by the Data Analytics Unit (DAU) from The World Justice Project (WJP) with the aim of unifying the different aspect of the carried by the unit. In this book, you will find not only general guidelines but also several issues that will help the reader to understand and contribute in our tasks.
+This coding handbook is a continuous work maintained by the Data Analytics Unit (DAU) from The World Justice Project (WJP) with the aim of unifying the different aspects of the work carried by the DAU. In this book, you will find not only general guidelines but also several issues that will help the reader to understand and contribute to our daily tasks.
 
-The handbook cover aspects related to the general workflow, the coding process and the visualization guidelines used by the team. As mentioned earlier, this book is a continuous work in progress and, as such, the rules and guides are not written in stone but rather, subject to improvements that every member of the team is open to discuss and include in this handbook.
+The handbook cover aspects related to the general workflow, the coding process and the visualization guidelines used by the team. As mentioned earlier, this book is a continuous work in progress and, as such, the rules and guides are not written in stone but rather, subject to improvements that every member of the team is open to discuss and include in this material.
 
 ## Prerequisites
 
 In order to assimilate the content in this chapter (and the entire handbook) we will require you to have the following:
 
--   An intermediate knowledge of R language.
+-   An intermediate knowledge of [R Programming Language](https://www.r-project.org/about.html).
 
--   R Studio is installed in your computer, however, you are free to use any other Integrated Development Environment (IDE) or the Text Editor of your choice.
+-   R Studio is installed in your computer. However, you are free to use any other Integrated Development Environment (IDE) or Text Editor of your choice.
 
 -   A basic knowledge of [Git](https://git-scm.com/).
 
 -   A [GitHub](https://github.com/) account.
 
--   Access to the DAU's SharePoint
+-   Access to the DAU's SharePoint.
 
 -   Although is not required, we strongly advise you to install [GitHub Desktop](https://desktop.github.com/).
 
@@ -38,6 +38,6 @@ The content in this Handbook is organized as follows:
 
 ## Licence
 
-This website is free to use and it is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License. Physical copies of this book are not currently available. If you are not a member of the DAU team, feel free to report typos, request information or even contribute by commenting or leaving a pull request at [ctoruno/DAU-R-Style-Manual](https://github.com/ctoruno/DAU-R-Style-Manual).
+This website is free to use and it is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License. Physical copies of this handbook are not currently available. If you are not a member of the DAU team, feel free to report typos, request information or even contribute by commenting or leaving a pull request at [ctoruno/DAU-R-Style-Manual](https://github.com/ctoruno/DAU-R-Style-Manual). This handbook was created using [Quarto Publishing System](https://quarto.org/).
 
 To learn more about the work of The World Justice Project, please visit the official [website](https://worldjusticeproject.org/).

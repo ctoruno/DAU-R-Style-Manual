@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.1.189">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -109,11 +109,6 @@ ul.task-list li input[type="checkbox"] {
   <a href="./coding.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Coding</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vizaes.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visualization Aesthetics</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -157,7 +152,6 @@ ul.task-list li input[type="checkbox"] {
       <p class="date">November 1, 2022</p>
     </div>
   </div>
-  
     
   </div>
   
@@ -172,17 +166,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="introduction" class="level1 unnumbered">
 <h1 class="unnumbered">Introduction</h1>
-<p>This coding handbook is a continuous work maintained by the Data Analytics Unit (DAU) from The World Justice Project (WJP) with the aim of unifying the different aspects of the work carried by the DAU. In this book, you will find not only general guidelines but also several issues that will help the reader to understand and contribute to our daily tasks.</p>
-<p>The handbook cover aspects related to the general workflow, the coding process and the visualization guidelines used by the team. As mentioned earlier, this book is a continuous work in progress and, as such, the rules and guides are not written in stone but rather, subject to improvements that every member of the team is open to discuss and include in this material.</p>
+<p>This coding handbook is a continuous work maintained by the Data Analytics Unit (DAU) from The World Justice Project (WJP) with the aim of unifying the different aspect of the carried by the unit. In this book, you will find not only general guidelines but also several issues that will help the reader to understand and contribute in our tasks.</p>
+<p>The handbook cover aspects related to the general workflow, the coding process and the visualization guidelines used by the team. As mentioned earlier, this book is a continuous work in progress and, as such, the rules and guides are not written in stone but rather, subject to improvements that every member of the team is open to discuss and include in this handbook.</p>
 <section id="prerequisites" class="level2">
 <h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <p>In order to assimilate the content in this chapter (and the entire handbook) we will require you to have the following:</p>
 <ul>
-<li><p>An intermediate knowledge of <a href="https://www.r-project.org/about.html">R Programming Language</a>.</p></li>
-<li><p>R Studio is installed in your computer. However, you are free to use any other Integrated Development Environment (IDE) or Text Editor of your choice.</p></li>
+<li><p>An intermediate knowledge of R language.</p></li>
+<li><p>R Studio is installed in your computer, however, you are free to use any other Integrated Development Environment (IDE) or the Text Editor of your choice.</p></li>
 <li><p>A basic knowledge of <a href="https://git-scm.com/">Git</a>.</p></li>
 <li><p>A <a href="https://github.com/">GitHub</a> account.</p></li>
-<li><p>Access to the DAU’s SharePoint.</p></li>
+<li><p>Access to the DAU’s SharePoint</p></li>
 <li><p>Although is not required, we strongly advise you to install <a href="https://desktop.github.com/">GitHub Desktop</a>.</p></li>
 </ul>
 <p>If you are new to R, I would recommend you to check the <a href="https://jjallaire.github.io/hopr/">Hands-On Programming with R</a> book written by Garrett Grolemund. If you are already comfortable with the R programming language but you need an introduction on how to analyze data using it, I would suggest you to read the <a href="https://r4ds.had.co.nz/">R for Data Science</a> book edited by the R4DS team.</p>
@@ -199,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="licence" class="level2">
 <h2 class="anchored" data-anchor-id="licence">Licence</h2>
-<p>This website is free to use and it is licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0</a> License. Physical copies of this handbook are not currently available. If you are not a member of the DAU team, feel free to report typos, request information or even contribute by commenting or leaving a pull request at <a href="https://github.com/ctoruno/DAU-R-Style-Manual">ctoruno/DAU-R-Style-Manual</a>. This handbook was created using <a href="https://quarto.org/">Quarto Publishing System</a>.</p>
+<p>This website is free to use and it is licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0</a> License. Physical copies of this book are not currently available. If you are not a member of the DAU team, feel free to report typos, request information or even contribute by commenting or leaving a pull request at <a href="https://github.com/ctoruno/DAU-R-Style-Manual">ctoruno/DAU-R-Style-Manual</a>.</p>
 <p>To learn more about the work of The World Justice Project, please visit the official <a href="https://worldjusticeproject.org/">website</a>.</p>
 
 
@@ -248,24 +242,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -301,42 +278,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -344,7 +303,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

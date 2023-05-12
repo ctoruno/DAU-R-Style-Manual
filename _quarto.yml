@@ -9,6 +9,7 @@ book:
     - index.qmd
     - workflow.qmd
     - coding.qmd
+    - vizaes.qmd
 
 bibliography: references.bib
 
