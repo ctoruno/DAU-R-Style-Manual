@@ -2,3 +2,6 @@
   quarto-pub:
     - id: 789c6045-97d4-4ec2-b826-6f9d392f3300
       url: 'https://quartopub.com/sites/ctoruno/wjp-r-handbook'
+  netlify:
+    - id: a9f79f0c-4d60-4acc-8f1e-26d4b3feb940
+      url: 'https://classy-nougat-0bec95.netlify.app'

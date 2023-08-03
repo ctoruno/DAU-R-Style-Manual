@@ -1,4 +1,4 @@
-![Zacatal by nicaraguan painter Raúl Marín](www/cover.jpeg){alt="Zacatal by nicaraguan painter Raúl Marín" fig-alt="Zacatal by nicaraguan painter Raúl Marín" fig-align="center"}
+![Zacatal by nicaraguan painter Raúl Marín](www/cover.jpeg){fig-alt="Zacatal by nicaraguan painter Raúl Marín" fig-align="center"}
 
 # Introduction {.unnumbered}
 
